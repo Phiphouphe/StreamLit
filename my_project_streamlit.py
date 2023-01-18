@@ -17,18 +17,21 @@ viz_correlation = sns.heatmap(df.corr(),
                                 annot=True
                                 )
 st.pyplot(viz_correlation.figure)
+st.write("Il y a une forte corrélation entre le nombre de pouces cubes et le nombre de cylindres.")
 
 st.write("Le nombre de voitures selon leur puissance (chevaux)")
 dist_sns = sns.displot(data=df,
 x=df["hp"], color = 'skyblue'
 )
 st.pyplot(dist_sns.figure)
+st.write("Nous remarquons que les voitures ayant le plus de chevaux sont moins nombreuses et que les voitures qui en ont moins.")
 
 st.write("Le nombre de voitures par année")
 distyear_sns = sns.displot(data=df,
 x=df["year"], color = 'lightgreen'
 )
 st.pyplot(distyear_sns.figure)
+st.write("En 1978, le nombre de voitures fut élevé. ")
 
 continent = list(np.unique(df["continent"]))
 option = st.selectbox("Region", continent)
